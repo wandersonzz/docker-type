@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  api:
+    build:
+      context: .
+      target: development
+    volumes:
+      - ./:/app-docker-type
+      - /app-docker-type/node_modules
+    ports:
+      - 5000:8800
+    command: npm run dev
